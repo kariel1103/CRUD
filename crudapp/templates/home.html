@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="{% url 'postcreate' %}">새 글 쓰기</a>
+{% for crud in cruds.all %}
+<h1> 제목: {{crud.title}} </h1>
+<p> 날짜: {{crud.pub_date}} </p>
+<p> 본문 미리보기: {{crud.summary}}<a href="{% url 'detail' crud.id %}">...more</a> </p>
+<br><br>
+
+{% endfor %}
+
+{% endblock %}
